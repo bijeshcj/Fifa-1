@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fifa</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    
+    <string-array name="menu_array">
+        <item>Home</item>
+        <item>Fifa 2014</item>
+        <item>I support</item>
+        <item>Calendar</item>
+        <item>Venues</item>
+        <item>Groups</item>
+        <item>Results</item>
+    </string-array>
+
+</resources>
