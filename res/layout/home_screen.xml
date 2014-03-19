@@ -15,9 +15,17 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:choiceMode="singleChoice"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0dp"
-        android:background="#111"/>
+        android:divider="@android:drawable/divider_horizontal_bright"
+        android:background="#555"/>
     
+     
+     <Button
+        android:id="@+id/get_resp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="112dp"
+        android:text="Get Response" />
 
 </android.support.v4.widget.DrawerLayout>
