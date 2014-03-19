@@ -3,7 +3,6 @@ package com.prokarma.fifa.screens;
 
 import java.util.Locale;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.SearchManager;
@@ -21,12 +20,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.prokarma.fifa.BaseActivity;
 import com.prokarma.fifa.R;
 import com.prokarma.fifa.controller.components.ActionBarController;
+import com.prokarma.fifa.models.soccer.Soccer;
+import com.prokarma.fifa.webservice.RequestManager;
 import com.prokarma.loggers.FifaLog;
 import com.prokarma.loggers.Severity;
 
@@ -38,6 +40,7 @@ public class HomeScreen extends BaseActivity implements ActionBarController{
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
 	private String[] mFifatitles;
+	private Button mGetRespBtn;
 	
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,7 @@ public class HomeScreen extends BaseActivity implements ActionBarController{
         	// set a custom shadow that overlays the main content when the drawer opens
             mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
             
-         // set up the drawer's list view with items and click listener
+            // set up the drawer's list view with items and click listener
             mDrawerList.setAdapter(new ArrayAdapter<String>(this,
                     R.layout.drawer_list_item, mFifatitles));
             
@@ -89,6 +92,21 @@ public class HomeScreen extends BaseActivity implements ActionBarController{
             if (savedInstanceState == null) {
                 selectItem(0);
             }
+            
+            mGetRespBtn = (Button) findViewById(R.id.get_resp);
+    		
+    		mGetRespBtn.setOnClickListener(new View.OnClickListener() {
+    			
+    			@Override
+    			public void onClick(View v) {
+    				// TODO Auto-generated method stub
+    				RequestManager rm = new RequestManager(getApplicationContext());
+    				rm.getSoccerResp();
+    				Soccer soc = rm.getSoccerResponse();
+    				
+    			}
+    		});
+            
         	
         }
         
